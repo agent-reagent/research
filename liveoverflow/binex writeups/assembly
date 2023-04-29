@@ -1,0 +1,33 @@
+mov rax, 0x00012
+mov rbx, [rax]
+The first instruction, "mov rax, 0x00012", sets the value of the RAX register to 0x00012 (18 in decimal).
+
+The second instruction, "mov rbx, [rax]", is trying to move a value from the memory location pointed to by RAX into the RBX register. 
+ 
+ 
+ https://docs.oracle.com/cd/E19641-01/802-1948/802-1948.pdf
+
+
+movl var, %eax
+Move the contents of memory location var into %eax.
+
+
+movl %cs:var, %eax
+Move the contents of the memory location var in the code segment into
+%eax.
+
+movl $var, %eax
+Move the address of var into %eax.
+
+movl array_base(%esi), %eax
+Add the address of memory location array_base to the contents of %esi
+to get an address in memory. Move the contents of this address into %eax.
+
+ 
+movl (%ebx, %esi, 4), %eax
+Multiply the contents of %esi by 4 and add this to the contents of %ebx to
+produce a memory reference. Move the contents of this memory location
+into %eax.
+movl struct_base(%ebx, %esi, 4), %eax
+Multiply the contents of %esi by 4, add this to the contents of %ebx, and
+add this to the address of struct_base
