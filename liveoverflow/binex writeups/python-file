@@ -1,0 +1,36 @@
+    
+    import sys
+
+print sys.argv
+if len(sys.argv)==2:
+    
+
+    print("hello, {0}".format(sys.argv[1]))
+else: 
+    sys.stderr.write("Usage: {0} <name>\n".format(sys.argv[0]))
+
+    
+    
+    
+    
+    import sys: This line imports the built-in Python module sys, which provides access to some variables used or maintained by the interpreter 
+    and to functions that interact strongly with the interpreter.
+
+    print sys.argv: This line prints out the list of command-line arguments passed to the Python script.
+
+    if len(sys.argv)==2:: This line checks if the length of sys.argv is exactly 2. This is checking if exactly one argument was provided to
+    the script (the first element of sys.argv is always the name of the script itself).
+
+    print("hello, {0}".format(sys.argv[1])): If exactly one argument was provided, this line prints a greeting message to the user, using the format
+    method to insert the first command-line argument into the message. 
+    The {0} in the message is a placeholder for the first argument, which is accessed using sys.argv[1]. The output will be "hello, "
+    followed by the first command-line argument.
+
+    else:: If the length of sys.argv is not exactly 2 (i.e., more or fewer arguments were provided), this line begins the else block.
+
+    sys.stderr.write("Usage: {0} <name>\n".format(sys.argv[0])): This line prints an error message to the standard error stream (stderr),
+    using the write method of the sys.stderr object. The message indicates the correct usage of the script (i.e., one argument, which should be a name), 
+    using the format method to insert the name of the script (sys.argv[0]) into the message. The output will be something like "Usage: scriptname.py <name>".
+
+Note: In Python 3, the print function is used instead of the print statement. So, the print statement in line 2 should be print(sys.argv).
+Also, the write method in line 6 should be print(..., file=sys.stderr) in Python 3.
